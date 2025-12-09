@@ -97,13 +97,13 @@ Since we are running the LLM on the host machine to save resources, we need to p
    $env:OLLAMA_HOST="0.0.0.0"; ollama serve
 
 ### Step 4: Build and Run with Docker Compose
-Open a new terminal window in the project folder. Since this project uses Docker Compose, you can start everything with a single command.
-     ```bash
-     docker compose up
-      ```
+  Open a new terminal window in the project folder. Since this project uses Docker Compose, you can start everything with a single command.
+  ```bash
+  docker compose up --build
+  ```
 
 ### Step 5: Access the App
-Open your browser and navigate to:
+  Open your browser and navigate to:
      http://localhost:8501
 
 
