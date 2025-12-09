@@ -54,12 +54,12 @@ This project demonstrates a robust integration of Edge AI, Cloud Services (AWS),
 4. **AWS Account** (S3 Bucket & RDS Database).
 
 ### Step 1: Clone the Repository
-```bash
+
 git clone https://github.com/KarthikaManoharan30/SafeRide-AI.git
 cd SafeRide-AI
 
 
-Step 2: Configure Environment Variables
+### Step 2: Configure Environment Variables
 
 ### Database (AWS RDS)
 RDS_HOST=your-db-endpoint.amazonaws.com
@@ -95,18 +95,14 @@ Since we are running the LLM on the host machine to save resources, we need to p
    ```powershell
    $env:OLLAMA_HOST="0.0.0.0"; ollama serve
 
-### Step 4: Build and Run with Docker
-Open a new terminal window in the project folder.
+### Step 4: Build and Run with Docker Compose
+Open a new terminal window in the project folder. Since this project uses Docker Compose, you can start everything with a single command.
 
-1. **Build the Image::**
-   docker build -t saferide-app .
-
-2. **Run the Container:**
-   docker run --add-host=host.docker.internal:host-gateway --env-file .env -p 8501:8501 -it saferide-app
+     docker compose up
 
 ### Step 5: Access the App
 Open your browser and navigate to:
-http://localhost:8501
+     http://localhost:8501
 
 
 ### Step 6: First-Time Setup (Inside the App)
