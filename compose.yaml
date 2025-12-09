@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: saferide-app
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # This keeps the container running and interactive
+    stdin_open: true 
+    tty: true
