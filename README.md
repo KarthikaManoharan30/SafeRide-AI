@@ -1,6 +1,4 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0d1117&height=300&section=header&text=SafeRide%20AI&fontSize=90&animation=fadeIn&fontAlignY=38&desc=Accident%20%26%20Helmet%20Detection%20System&descAlignY=51&descAlign=62" width="100%"/>
-</div>
+![SafeRide AI Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=SafeRide%20AI&fontSize=90&animation=fadeIn&fontAlignY=38&desc=Accident%20%26%20Helmet%20Detection%20System&descAlignY=51&descAlign=62)
 
 # 🛡️ SafeRide: AI-Powered Accident & Helmet Detection System
 
@@ -56,3 +54,71 @@ This project demonstrates a robust integration of Edge AI, Cloud Services (AWS),
 ```bash
 git clone https://github.com/KarthikaManoharan30/SafeRide-AI.git
 cd SafeRide-AI
+
+
+Step 2: Configure Environment Variables
+
+# Database (AWS RDS)
+RDS_HOST=your-db-endpoint.amazonaws.com
+RDS_PORT=5432
+RDS_USER=postgres
+RDS_PASSWORD=your_password
+RDS_DB=postgresdb
+
+# Cloud Storage (AWS S3)
+AWS_REGION=us-east-1
+S3_BUCKET=your-bucket-name
+
+# AI Models (Ollama)
+RAG_MODEL=llama3.2:1b
+RAG_EMBED_MODEL=llama3.2:1b
+
+# Alerts
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+ALERT_EMAIL_TO=admin@example.com
+
+
+### Step 3: Setup Ollama (Host Machine)
+Since we are running the LLM on the host machine to save resources, we need to prepare the model and network permissions.
+
+1. **Pull the Model:**
+   Open PowerShell or Terminal and run:
+   ```powershell
+   ollama pull llama3.2:1b
+
+2. **Expose Ollama to Docker:**
+   Windows PowerShell (Run as Administrator):
+   ```powershell
+   $env:OLLAMA_HOST="0.0.0.0"; ollama serve
+
+### Step 4: Build and Run with Docker
+Open a new terminal window in the project folder.
+
+1. **Build the Image::**
+   docker build -t saferide-app .
+
+2. **Run the Container:**
+   docker run --add-host=host.docker.internal:host-gateway --env-file .env -p 8501:8501 -it saferide-app
+
+### Step 5: Access the App
+Open your browser and navigate to:
+http://localhost:8501
+
+
+### Step 6: First-Time Setup (Inside the App)
+Once the app is running in your browser, you need to initialize the database and AI memory.
+
+1. **Initialize Database:**
+   - Expand the **"🗄️ Database setup"** section in the app.
+   - Click **"Create detections table"**.
+   - Click **"Create violations table"**.
+   - *You only need to do this once.*
+
+2. **Initialize AI Memory (RAG):**
+   - Go to the **Detect** tab and run a test detection (upload an image) to generate some data.
+   - Expand the **"Reports & RAG"** section.
+   - Click **"Build/Refresh Index"**.
+   - *Do this whenever you want the Chatbot to learn about new detections.*
+
+**You are now ready to use the SafeRide AI system!**
