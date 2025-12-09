@@ -1,4 +1,7 @@
-![SafeRide AI Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=SafeRide%20AI&fontSize=90&animation=fadeIn&fontAlignY=38&desc=Accident%20%26%20Helmet%20Detection%20System&descAlignY=51&descAlign=62)
+<div align="center">
+  <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=2000&auto=format&fit=crop" alt="SafeRide AI Banner" width="100%" style="border-radius: 10px;"/>
+  <br/><br/>
+</div>
 
 # 🛡️ SafeRide: AI-Powered Accident & Helmet Detection System
 
@@ -58,22 +61,22 @@ cd SafeRide-AI
 
 Step 2: Configure Environment Variables
 
-# Database (AWS RDS)
+### Database (AWS RDS)
 RDS_HOST=your-db-endpoint.amazonaws.com
 RDS_PORT=5432
 RDS_USER=postgres
 RDS_PASSWORD=your_password
 RDS_DB=postgresdb
 
-# Cloud Storage (AWS S3)
+### Cloud Storage (AWS S3)
 AWS_REGION=us-east-1
 S3_BUCKET=your-bucket-name
 
-# AI Models (Ollama)
+### AI Models (Ollama)
 RAG_MODEL=llama3.2:1b
 RAG_EMBED_MODEL=llama3.2:1b
 
-# Alerts
+### Alerts
 TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
 ALERT_EMAIL_TO=admin@example.com
