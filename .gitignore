@@ -1,0 +1,9 @@
+.env
+__pycache__/
+runs/
+indexes/
+.venv/
+.git/
+*.mp4
+*.jpg
+*.png

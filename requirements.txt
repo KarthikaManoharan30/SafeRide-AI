@@ -1,0 +1,15 @@
+streamlit
+ultralytics
+boto3
+python-dotenv
+sqlalchemy
+psycopg2-binary
+opencv-python-headless
+pillow
+requests
+langchain
+langchain-community
+langchain-text-splitters 
+langchain-ollama
+faiss-cpu
+fpdf

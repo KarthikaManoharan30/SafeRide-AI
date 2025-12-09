@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['accident', 'helmet', 'no helmet']
+
+roboflow:
+  workspace: karthika-pcyun
+  project: helmet-accident-y96lp-x3u3d
+  version: 1
+  license: CC BY 4.0
+  url: https://app.roboflow.com/karthika-pcyun/helmet-accident-y96lp-x3u3d/1
