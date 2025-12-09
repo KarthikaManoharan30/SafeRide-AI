@@ -55,12 +55,13 @@ This project demonstrates a robust integration of Edge AI, Cloud Services (AWS),
 
 ### Step 1: Clone the Repository
 
+```bash
 git clone https://github.com/KarthikaManoharan30/SafeRide-AI.git
 cd SafeRide-AI
-
+```
 
 ### Step 2: Configure Environment Variables
-
+```dotenv
 ### Database (AWS RDS)
 RDS_HOST=your-db-endpoint.amazonaws.com
 RDS_PORT=5432
@@ -80,7 +81,7 @@ RAG_EMBED_MODEL=llama3.2:1b
 TELEGRAM_BOT_TOKEN=your_bot_token
 TELEGRAM_CHAT_ID=your_chat_id
 ALERT_EMAIL_TO=admin@example.com
-
+```
 
 ### Step 3: Setup Ollama (Host Machine)
 Since we are running the LLM on the host machine to save resources, we need to prepare the model and network permissions.
@@ -97,8 +98,9 @@ Since we are running the LLM on the host machine to save resources, we need to p
 
 ### Step 4: Build and Run with Docker Compose
 Open a new terminal window in the project folder. Since this project uses Docker Compose, you can start everything with a single command.
-
+     ```bash
      docker compose up
+      ```
 
 ### Step 5: Access the App
 Open your browser and navigate to:
