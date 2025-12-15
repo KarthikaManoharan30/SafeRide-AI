@@ -914,7 +914,8 @@ with tab_chat:
                     st.write(rows)
 
 
-st.image("D:\Helmet_detection\banner.jpg", use_container_width='3000')
+# Use the online banner image (Safe and works in Docker)
+st.image("https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=2000&auto=format&fit=crop", use_container_width=True)
 
 st.subheader("\"The future of road safety is not just about smarter cars, but smarter oversight.\"")
 st.caption("Enhancing road safety through AI by SafeRide")
